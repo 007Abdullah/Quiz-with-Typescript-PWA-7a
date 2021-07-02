@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const Question: React.FC<propType> = ({ question, options, callback, currentQuestion }) => {
+const Question: React.FC<propType> = ({ question, option, callback, currentQuestion }) => {
     const classes = useStyles();
     const [userSelect, setUserSelect] = useState("");
 
@@ -30,12 +30,13 @@ const Question: React.FC<propType> = ({ question, options, callback, currentQues
                     <br />
                     <div>
                         <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, userSelect)}>
-                            {options?.map((eachOption: string, index: number) => {
+                            {option?.map((eachOption: string, index: number) => {
                                 return (
                                     <React.Fragment key={index}>
                                         <div>
                                             <label>
                                                 <input type="radio" name="option" value={eachOption} required checked={userSelect === eachOption} onChange={handleState} />
+                                                {eachOption}
                                             </label>
                                         </div>
                                     </React.Fragment>
