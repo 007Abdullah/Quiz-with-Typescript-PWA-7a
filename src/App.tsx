@@ -10,9 +10,11 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <React.Fragment>
+      <div className="App">
 
-    </div>
+      </div>
+    </React.Fragment>
   );
 }
 
